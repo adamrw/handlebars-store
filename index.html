@@ -9,33 +9,41 @@
   <body>
 
     <div id="product-container"></div>
-      <h1>My Store Of Shit</h1>
-      <div id="shit"></div>
     
-    <script src="products-data.js"></script>
+    <h4>WishList</h4>
+    <ul id="wishlist">
+    </ul>
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
     <script src="main.js"></script>
+    <script src="products-data.js"></script>
 
 
 {{!-- template --}}
     <script id="store-template" type="text/x-handlebars-template">
-      <h2>{{title}}</h2>
-      {{!-- <p>{{cost}}</p> --}}
-      <image src="{{image}}">
-      <p>{{details}}</p>
-
-      {{#if productsList}}
+      <div class="product">
+        <h2>{{title}}</h2>
+        {{!-- <p>{{cost}}</p> --}}
+        <image src="{{image}}">
+        {{#if sale}}
+        <p>Price: ${{cost}}</p>
+        {{/if}}
+        <h3>Details</h3>
         <ul>
-          {{#each productsList}}
-            <li>{{title}} - {{cost}} - {{image}} - {{sale}}</li>
-          {{/each}}
+        {{#each details}}
+          <li><strong>{{@key}}:</strong> {{this}}</li>
+        {{/each}}
         </ul>
+        <button class="btn btn-primary" placeholder="add">Add To Wishlist</button>
+      </div>
 
-      <div class="product"></div>
+    </script>
 
+    <script type="text/x-handlebars-template" id="wishlistitemm">
+      <li class="wishItem">{{title}} <button class="btn btn-danger" placeholder="delete">Remove From Wishlist</button></li>
     </script>
 
   </body>
