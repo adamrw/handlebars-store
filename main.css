@@ -1,0 +1,16 @@
+.miain-container {
+	background-color: #4183C4;
+}
+.product {
+	border: 2px solid black;
+	margin: 20px;
+	border-radius: 10px;
+	display: inline-block;
+	background-color: #E6F1F6;
+	overflow: hidden;
+	/*box-shadow: 10px;*/
+}
+
+.btn {
+	margin-bottom: 15px;
+}
