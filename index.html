@@ -18,16 +18,17 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
-    <script src="main.js"></script>
     <script src="products-data.js"></script>
+    <script src="main.js"></script>
+    
 
 
-{{!-- template --}}
+<!--  template -->
     <script id="store-template" type="text/x-handlebars-template">
       <div class="product">
         <h2>{{title}}</h2>
         {{!-- <p>{{cost}}</p> --}}
-        <image src="{{image}}">
+        <image src={{image}}>
         {{#if sale}}
         <p>Price: ${{cost}}</p>
         {{/if}}
@@ -37,7 +38,7 @@
           <li><strong>{{@key}}:</strong> {{this}}</li>
         {{/each}}
         </ul>
-        <button class="btn btn-primary" placeholder="add">Add To Wishlist</button>
+        <button class="btn btn-success" placeholder="add">Add To Wishlist</button>
       </div>
 
     </script>
